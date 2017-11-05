@@ -13,4 +13,4 @@
      |_____________|| |_|L                  Nodder
 ```
 
-Source lesson: [c-code](http://edu.51cto.com/course/2224.html)
+Source lesson: [Spring MVC从入门到精通视频教程](http://edu.51cto.com/course/2224.html)
