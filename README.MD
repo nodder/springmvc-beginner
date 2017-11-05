@@ -2,6 +2,8 @@
 
 **This is my spring mvc study lesson from [Spring MVC从入门到精通视频教程](http://edu.51cto.com/course/2224.html)**
 
+The study is completed in 201706.
+
 ```
        .-------------.       .    .   *       *   
       /_/_/_/_/_/_/_/ \         *       .   )    .
