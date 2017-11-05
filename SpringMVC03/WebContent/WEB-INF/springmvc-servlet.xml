@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+  
+  
+  <!-- 配置HandlerMapping  根据beanname找到对应Controller  -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"></bean>
+
+  <!--  配置视图解析器 -->
+  	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  		<property name="prefix" value="/"></property>
+  		<property name="suffix" value=".jsp"></property>
+  	</bean>
+
+
+
+    <!--  根据名称来查找Controller -->
+	<bean name="/user.do" class="name.cdd.study.spring.hello.UserController"> </bean>
+	
+	<!--  根据简单URL来查找Controller -->
+	<bean id="user2Controller" name="/user2.do" class="name.cdd.study.spring.hello.User2ByURLController"> </bean>
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
+		<property name="mappings">
+			<props>
+				<prop key="/user2Info.do">user2Controller</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 控制类的类名访问controller。    在user.jsp使用时，类名首字母小写，且加上pattern .do，即user3Controller.do -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" > </bean>
+	<bean class="name.cdd.study.spring.hello.User3Controller"> </bean>
+
+</beans>
